@@ -1,0 +1,67 @@
+Title: Washington Indigency Calculator
+Author: Gianna McNally
+Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
+<div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
+<h2 style="text-align:center;">Washington Indigency Calculator</h2>
+<p><b>This is a <a href="https://www.codingthelaw.org/level/2/#mission_p1">class project</a>. You should not rely on it as a source of legal information!</b></p>
+<p>Answer the following questions to see if you qualify for appointed counsel in Washington.</p>
+After:
+<script>
+function fedpov(house,income,percentage){
+	// Determines if your income is less than or equal to
+	// a percentage of the 2023 federal poverty guidelines
+	// for the contiguous United States. See
+	// https://aspe.hhs.gov/poverty-guidelines
+
+		var line = NaN;
+
+		if (house == 1) {
+			line = 14580;
+		} else if (house == 2) {
+			line = 19720;
+		} else if (house == 3) {
+			line = 24860;
+		} else if (house == 4) {
+			line = 30000;
+		} else if (house == 5) {
+			line = 35140;
+		} else if (house == 6) {
+			line = 40280;
+		} else if (house == 7) {
+			line = 45420;
+		} else if (house == 8) {
+			line = 50560;
+		} else if (house > 8) {
+			line = 50560 + (house-8)*5140;
+		}
+
+		if (income <= (line*(percentage/100))) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+</script>
+
+
+Q(1): <b>Do you receive one or more of the following types of public assistance?</b>
+	<ul>
+		<li>Temporary Assistance for Needy Families</li>
+    		<li>Aged, blind, or disability benefits</li>
+    		<li>Pregnant woman assistance benefits</li>
+    		<li>Poverty-related veterans' benefits</li>
+    		<li>Food stamps/SNAP</li>
+    		<li>Refugee resettlement benefits</li>
+    		<li>Medicaid</li>
+    		<li>Supplemental Security Income</li>
+	</ul>
+A:Yes
+	Q(1.1):GOTO:qual
+A:No
+	Q(house): How many people are in your household?
+	X:number
+		Q(income):What is your household's annual income in after tax dollars?
+		X[javascript:if (fedpov(getvar('house'),getvar('income'),125)){ goto('qual') } else { goto('noqual') } ]:number
+Q(noqual):You are <b>not</b> eligible for state-assigned counsel.
+Q(qual): You <b>are</b> eligible for state-assigned counsel.
+		
