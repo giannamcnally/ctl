@@ -1,0 +1,62 @@
+Title: DACA "Flowchart"
+Author: [your name]
+Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
+<div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
+<h2 style="text-align:center;">DACA "Flowchart"</h2>
+<p><b>This is a <a href="https://www.codingthelaw.org/#mission">class project</a>. You should not rely on it as a source of legal information!</b></p>
+<p>Answer the following questions to see if someone qualifies for DACA.</p>
+
+Q(1):Were you born on or before June 16, 1981?
+A:Yes
+	Q(1.1):Did you enter the United States before your 16th birthday?
+	A:Yes
+		Q(1.1.1):Have you continually resided in the United States since June 15, 2007?
+		A:Yes
+			Q(1.1.1.1):Were you in the United States on June 15, 2012?
+			A:Yes
+				Q(1.1.1.1.1):Were you out of status on June 15, 2012?
+				A:Yes
+					Q(1.1.1.1.1.1):Have you been convicted of a felony or significant misdemeanor?
+					A:No
+						Q(1.1.1.1.1.1.1):Have you been convicted of more than one misdemeanor?
+						A:No
+							Q(1.1.1.1.1.1.1.1):Do you pose a threat to national security or public safety?
+							A:No
+								Q(1.1.1.1.1.1.1.1.1):Are you currently in school?
+								A:Yes
+									Q(1.1.1.1.1.1.1.1.1.1):Are you age 15 or older?
+									A:Yes
+										Q(1.1.1.1.1.1.1.1.1.1.1):GOTO:2
+									A:No
+										Q(1.1.1.1.1.1.1.1.1.1.2):Are you currently in removal proceedings, or have a final removal or VD order?
+										A:Yes
+											Q(1.1.1.1.1.1.1.1.1.1.2.1):GOTO:2
+										A:No
+											Q(1.1.1.1.1.1.1.1.1.1.2.2):You must wait until your 15th birthday to apply for DACA.
+								A:No
+									Q(1.1.1.1.1.1.1.1.1.2):Do you have a high school diploma or GED?
+									A:Yes
+										Q(1.1.1.1.1.1.1.1.1.2.1):GOTO:1.1.1.1.1.1.1.1.1.1
+									A:No
+										Q(1.1.1.1.1.1.1.1.1.2.2):Are you an honorably discharged veteran of the Coast Guard or the Armed Forces of the United States?
+										A:Yes
+											Q(1.1.1.1.1.1.1.1.1.2.2.1):GOTO:2
+										A:No
+											Q(1.1.1.1.1.1.1.1.1.2.2.2):You are not eligible to apply for DACA until educational or military requirements are met.
+							A:Yes
+								Q(1.1.1.1.1.1.1.1.2):GOTO:1.2
+						A:Yes
+							Q(1.1.1.1.1.1.1.2):GOTO:1.2
+					A:Yes
+						Q(1.1.1.1.1.1.2):GOTO:1.2
+				A:No
+					Q(1.1.1.1.1.2):GOTO:1.2
+			A:No
+				Q(1.1.1.1.2):GOTO:1.2
+		A:No
+			Q(1.1.1.2):GOTO:1.2
+	A:No
+		Q(1.1.2):GOTO:1.2
+A:No
+	Q(1.2): You are not eligible for DACA.
+Q(2): You are eligible to apply for DACA.
